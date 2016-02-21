@@ -40,7 +40,5 @@ define pgpool2::server::pcp(
     target  => $target,
     content => template('pgpool2/pcp.conf.erb'),
     order   => $order,
-    owner   => $::id,
-    mode    => '0600',
   }
 }

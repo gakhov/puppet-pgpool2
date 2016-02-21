@@ -39,7 +39,5 @@ define pgpool2::server::pool_passwd(
     target  => $target,
     content => template('pgpool2/pool_passwd.erb'),
     order   => $order,
-    owner   => $::id,
-    mode    => '0600',
   }
 }
