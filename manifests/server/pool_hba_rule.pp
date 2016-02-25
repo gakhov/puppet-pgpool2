@@ -55,7 +55,5 @@ define pgpool2::server::pool_hba_rule(
     target  => $target,
     content => template('pgpool2/pool_hba.conf.erb'),
     order   => $order,
-    owner   => $::id,
-    mode    => '0600',
   }
 }

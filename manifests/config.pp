@@ -72,21 +72,18 @@ class pgpool2::config inherits pgpool2 {
     owner  => 0,
     group  => 0,
     mode   => '0644',
-    # warn   => true,
   }
 
   concat { $pcp_conf_path:
     owner  => 0,
     group  => 0,
     mode   => '0644',
-    # warn   => true,
   }
 
   concat { $pool_passwd_conf_path:
     owner  => 0,
     group  => 0,
     mode   => '0644',
-    # warn   => true,
   }
 
   # Addy ryslog resource
