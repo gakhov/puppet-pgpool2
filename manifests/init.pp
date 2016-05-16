@@ -41,7 +41,6 @@ class pgpool2 (
   $client_idle_limit              = $pgpool2::params::client_idle_limit,
 
   $log_destination                = $pgpool2::params::log_destination,
-  $log_standby_delay              = $pgpool2::params::log_standby_delay,
 
   $print_timestamp                = $pgpool2::params::print_timestamp,
   $log_connections                = $pgpool2::params::log_connections,
