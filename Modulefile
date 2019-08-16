@@ -1,5 +1,5 @@
 name 'puppet-pgpool2'
-version '0.2.0'
+version '0.2.1'
 source 'git://github.com/jrodriguezjr/puppet-pgpool2.git'
 author 'jrodriguezjr'
 license 'Apache License, Version 2.0'

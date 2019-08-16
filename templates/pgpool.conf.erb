@@ -366,63 +366,62 @@ health_check_retry_delay = <%= @health_check_retry_delay %>
 # FAILOVER AND FAILBACK
 #------------------------------------------------------------------------------
 
-failover_command = ''
-                                   # Executes this command at failover
-                                   # Special values:
-                                   #   %d = node id
-                                   #   %h = host name
-                                   #   %p = port number
-                                   #   %D = database cluster path
-                                   #   %m = new master node id
-                                   #   %H = hostname of the new master node
-                                   #   %M = old master node id
-                                   #   %P = old primary node id
-                                   #   %% = '%' character
-failback_command = ''
-                                   # Executes this command at failback.
-                                   # Special values:
-                                   #   %d = node id
-                                   #   %h = host name
-                                   #   %p = port number
-                                   #   %D = database cluster path
-                                   #   %m = new master node id
-                                   #   %H = hostname of the new master node
-                                   #   %M = old master node id
-                                   #   %P = old primary node id
-                                   #   %% = '%' character
+failover_command = '<%= @failover_command %>'
+                                    # Executes this command at failover
+                                    # Special values:
+                                    #   %d = node id
+                                    #   %h = host name
+                                    #   %p = port number
+                                    #   %D = database cluster path
+                                    #   %m = new master node id
+                                    #   %H = hostname of the new master node
+                                    #   %M = old master node id
+                                    #   %P = old primary node id
+                                    #   %% = '%' character
+failback_command = '<%= @failback_command %>'
+                                    # Executes this command at failback.
+                                    # Special values:
+                                    #   %d = node id
+                                    #   %h = host name
+                                    #   %p = port number
+                                    #   %D = database cluster path
+                                    #   %m = new master node id
+                                    #   %H = hostname of the new master node
+                                    #   %M = old master node id
+                                    #   %P = old primary node id
+                                    #   %% = '%' character
 
-fail_over_on_backend_error = off
-                                   # Initiates failover when writing to the
-                                   # backend communication socket fails
-                                   # This is the same behaviour of pgpool-II
-                                   # 2.2.x and previous releases
-                                   # If set to off, pgpool will report an
-                                   # error and disconnect the session.
+fail_over_on_backend_error = <%= @fail_over_on_backend_error %>
+                                    # Initiates failover when writing to the
+                                    # backend communication socket fails
+                                    # This is the same behaviour of pgpool-II
+                                    # 2.2.x and previous releases
+                                    # If set to off, pgpool will report an
+                                    # error and disconnect the session.
 
 
 #------------------------------------------------------------------------------
 # ONLINE RECOVERY
 #------------------------------------------------------------------------------
 
-recovery_user = 'nobody'
-                                   # Online recovery user
-recovery_password = ''
-                                   # Online recovery password
-recovery_1st_stage_command = ''
-                                   # Executes a command in first stage
-recovery_2nd_stage_command = ''
-                                   # Executes a command in second stage
-recovery_timeout = 90
-                                   # Timeout in seconds to wait for the
-                                   # recovering node's postmaster to start up
-                                   # 0 means no wait
-client_idle_limit_in_recovery = 0
-                                   # Client is disconnected after being idle
-                                   # for that many seconds in the second stage
-                                   # of online recovery
-                                   # 0 means no disconnection
-                                   # -1 means immediate disconnection
-
+recovery_user = '<%= @recovery_user %>'
+                                    # Online recovery user
+recovery_password = '<%= @recovery_password %>'
+                                    # Online recovery password
+recovery_1st_stage_command = '<%= @recovery_1st_stage_command %>'
+                                    # Executes a command in first stage
+recovery_2nd_stage_command = '<%= @recovery_2nd_stage_command %>'
+                                    # Executes a command in second stage
+recovery_timeout = <%= @recovery_timeout %>
+                                    # Timeout in seconds to wait for the
+                                    # recovering node's postmaster to start up
+                                    # 0 means no wait
+client_idle_limit_in_recovery = <%= @client_idle_limit_in_recovery %>
+                                    # Client is disconnected after being idle
+                                    # for that many seconds in the second stage
+                                    # of online recovery
+                                    # 0 means no disconnection
+                                    # -1 means immediate disconnection
 
 #------------------------------------------------------------------------------
 # OTHERS
