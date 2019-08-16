@@ -75,6 +75,17 @@ class pgpool2 (
   $health_check_max_retries       = $pgpool2::params::health_check_max_retries,
   $health_check_retry_delay       = $pgpool2::params::health_check_retry_delay,
 
+  $failover_command               = $pgpool2::params::failover_command,
+  $failback_command               = $pgpool2::params::failback_command,
+  $fail_over_on_backend_error     = $pgpool2::params::fail_over_on_backend_error,
+
+  $recovery_user                  = $pgpool2::params::recovery_user,
+  $recovery_password              = $pgpool2::params::recovery_password,
+  $recovery_1st_stage_command     = $pgpool2::params::recovery_1st_stage_command,
+  $recovery_2nd_stage_command     = $pgpool2::params::recovery_2nd_stage_command,
+  $recovery_timeout               = $pgpool2::params::recovery_timeout,
+  $client_idle_limit_in_recovery  = $pgpool2::params::client_idle_limit_in_recovery,
+
   $confdir                        = $pgpool2::params::confdir,
   $pgpool_conf_path               = $pgpool2::params::pgpool_conf_path,
   $pool_hba_conf_path             = $pgpool2::params::pool_hba_conf_path,

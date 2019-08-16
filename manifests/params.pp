@@ -94,6 +94,19 @@ class pgpool2::params {
   $health_check_password      = ' '
   $health_check_max_retries   = 0
   $health_check_retry_delay   = 1
+
+  # - FAILOVER AND FAILBACK -
+  $failover_command           = ''
+  $failback_command           = ''
+  $fail_over_on_backend_error = 'off'
+
+  # - ONLINE RECOVERY -
+  $recovery_user                 = 'nobody'
+  $recovery_password             = ''
+  $recovery_1st_stage_command    = ''
+  $recovery_2nd_stage_command    = ''
+  $recovery_timeout              = 90
+  $client_idle_limit_in_recovery = 0
   # PGPOOL Config Parameters - end
 
   # pgpool-II replication manager - PCP Configuration
