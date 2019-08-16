@@ -86,15 +86,19 @@ class pgpool2::config inherits pgpool2 {
     mode   => '0644',
   }
 
-  # Addy ryslog resource
+  # Add rsyslog resource
   file { '/etc/rsyslog.d/10-pgpool.conf':
-    notify  => Service["rsyslog"],
+    notify  => Exec["rsyslog_restart"],
     ensure  => file,
     owner   => 0,
     group   => 0,
     mode    => '0644',
-    require => Package["rsyslog"],
     content => template($pgpool_rsyslog_template),
+  }
+
+  exec { 'rsyslog_restart':
+    refreshonly => true,
+    command     => '/etc/init.d/rsyslog restart',
   }
 
 }
